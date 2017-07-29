@@ -93,9 +93,9 @@ DATABASES = {
 # PostgresSQL Docker configuration
       "default": {
           "ENGINE": "django.db.backends.postgresql_psycopg2",
-          "NAME": os.environ["DBNAME"],
-          "USER": os.environ["DBUSER"],
-          "PASSWORD": os.environ["DBPASS"],
+          "NAME": os.environ.get("DBNAME", True),
+          "USER": os.environ.get("DBUSER", True),
+          "PASSWORD": os.environ.get("DBPASS", True),
           "HOST": "",
           "PORT": "5432",
       }
