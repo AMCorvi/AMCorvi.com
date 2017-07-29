@@ -93,10 +93,10 @@ DATABASES = {
 # PostgresSQL Docker configuration
       "default": {
           "ENGINE": "django.db.backends.postgresql_psycopg2",
-          "NAME": os.environ.get("DBNAME", True),
-          "USER": os.environ.get("DBUSER", True),
-          "PASSWORD": os.environ.get("DBPASS", True),
-          "HOST": "",
+          "NAME": os.getenv("DBNAME"),
+          "USER": os.getenv("DBUSER"),
+          "PASSWORD": os.getenv("DBPASS"),
+          "HOST": os.getenv("DBHOST"),
           "PORT": "5432",
       }
 
@@ -116,6 +116,8 @@ DATABASES = {
     #    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     #}
 }
+import dj_database_url
+DATABASES['default'] = dj_database_url.config()
 
 
 # Password validation
