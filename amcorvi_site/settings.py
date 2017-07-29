@@ -30,8 +30,8 @@ ALLOWED_HOSTS = [#'localhost',
                  'corvi.co',
                  'blog.corvi.dev',
                  'projects.corvi.dev',
-                 'https://amcorvi.herokuapp.com',
-                 # '*' # TODO: Remove in production
+                 'amcorvi.herokuapp.com',
+                 '*' # TODO: Remove in production
                 ]
 
 
@@ -91,24 +91,24 @@ DATABASES = {
 
 
 # PostgresSQL Docker configuration
-     #  "default": {
-     #      "ENGINE": "django.db.backends.postgresql_psycopg2",
-     #      "NAME": "postgres",
-     #      "USER": "postgres",
-     #      "PASSWORD": os.environ["DBPASS"],
-     #      "HOST": "",
-     #      "PORT": "5432",
-     #  }
+      "default": {
+          "ENGINE": "django.db.backends.postgresql_psycopg2",
+          "NAME": os.environ["DBNAME"],
+          "USER": os.environ["DBUSER"],
+          "PASSWORD": os.environ["DBPASS"],
+          "HOST": "",
+          "PORT": "5432",
+      }
 
 # PostgresSQL local development configuration
-     "default": {
-         "ENGINE": "django.db.backends.postgresql_psycopg2",
-         "NAME": "amcorvi",
-         "USER": "AMC",
-         "PASSWORD": "",
-         "HOST": "localhost",
-         "PORT": "",
-     }
+     # "default": {
+     #     "ENGINE": "django.db.backends.postgresql_psycopg2",
+     #     "NAME": "amcorvi",
+     #     "USER": "AMC",
+     #     "PASSWORD": "",
+     #     "HOST": "localhost",
+     #     "PORT": "",
+     # }
 
 #  SQLite configuration
     #'default': {
