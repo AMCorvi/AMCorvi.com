@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-
+import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -91,14 +91,7 @@ DATABASES = {
 
 
 # PostgresSQL Docker configuration
-      "default": {
-          "ENGINE": "django.db.backends.postgresql_psycopg2",
-          "NAME": os.getenv("DBNAME"),
-          "USER": os.getenv("DBUSER"),
-          "PASSWORD": os.getenv("DBPASS"),
-          "HOST": os.getenv("DBHOST"),
-          "PORT": "5432",
-      }
+      "default": dj_database_url.config()
 
 # PostgresSQL local development configuration
      # "default": {
@@ -116,8 +109,6 @@ DATABASES = {
     #    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     #}
 }
-import dj_database_url
-DATABASES['default'] = dj_database_url.config()
 
 
 # Password validation
