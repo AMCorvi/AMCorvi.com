@@ -28,8 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = [#'localhost',
                  # '127.0.0.1',
                  'corvi.co',
-                 'blog.corvi.dev',
-                 'projects.corvi.dev',
+                 'blog.corvi.co',
+                 'projects.corvi.co',
                  'amcorvi.herokuapp.com',
                  '*' # TODO: Remove in production
                 ]
