@@ -6,4 +6,4 @@ amc_env/
 *.pyc
 venv/
 .tern-port
-
+staticfiles
