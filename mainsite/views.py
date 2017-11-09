@@ -22,5 +22,8 @@ def about(request):
     resume = resume[0]
     return render(request, "mainsite/about.html", { 'link': resume})
 
+def keybase(request):
+    return render(request, "mainsite/keybase.html")
+
 class Project_List_View(generic.ListView):
     context_object_name = "portfolio_projects"
