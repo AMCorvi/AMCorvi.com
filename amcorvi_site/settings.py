@@ -23,9 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '=&g4()pu!$z@@b6cy1xmtck1@td1!_p(8w1s3r1v==t##n$48('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = [#'localhost',
+ALLOWED_HOSTS = [
+                 #'localhost',
                  # '127.0.0.1',
                  'corvi.co',
                  'blog.corvi.co',
@@ -61,9 +62,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_hosts.middleware.HostsResponseMiddleware'
 ]
+
+
 ROOT_URLCONF = 'amcorvi_site.urls'
 ROOT_HOSTCONF = 'amcorvi_site.hosts'
 DEFAULT_HOST = 'www'
+
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 TEMPLATES = [
     {
@@ -104,10 +111,10 @@ DATABASES = {
      # }
 
 #  SQLite configuration
-    #'default': {
+    # 'default': {
     #    'ENGINE': 'django.db.backends.sqlite3',
     #    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    #}
+    # }
 }
 
 
