@@ -64,7 +64,7 @@
                     <h1 id="sectionTitle"> Projects </h1>
                 </a>
 					<section id="cta" class="main special">
-                   {% for project in projects %}
+                   {% for project in projects reversed %}
                         <h2>{{ project.project_name}} </h2>
                         <p class="projects">{{project.description}}</p>
                         <br />
