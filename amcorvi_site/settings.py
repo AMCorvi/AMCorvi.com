@@ -68,10 +68,6 @@ ROOT_URLCONF = 'amcorvi_site.urls'
 ROOT_HOSTCONF = 'amcorvi_site.hosts'
 DEFAULT_HOST = 'www'
 
-SECURE_SSL_REDIRECT = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
