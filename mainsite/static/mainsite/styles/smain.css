@@ -1667,6 +1667,21 @@ body.is-loading #header.alt .inner {
 }
 
 /* supplementals  */
+
+section#cta {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+section#cta > .project {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    width: 50%;
+}
+
 p.projects {
   margin: auto;
   text-align: center;
