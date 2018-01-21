@@ -52,7 +52,7 @@
                             <p> {{ blog.post_content|truncatewords:"35" }} </p>
 							<ul class="actions">
                                 <li><a href='http://blog.corvi.co/{{blog.pk}}' class="button">Read More</a></li>
-							</ul>
+						</ul>
 						</article>
 
                     {% endfor %}
@@ -65,26 +65,28 @@
                 </a>
 					<section id="cta" class="main special">
                    {% for project in projects reversed %}
-                        <h2>{{ project.project_name}} </h2>
-                        <p class="projects">{{project.description}}</p>
-                        <br />
-                        <h6>{{ project.technologies }}</h6>
-						<ul class="actions">
-                            <li><a href="{{project.repo_url}}" class="button">View Source</a></li>
+                   <div class="project">
+                       <h2>{{ project.project_name}} </h2>
+                       <p class="projects">{{project.description}}</p>
+                       <br />
+                       <h6>{{ project.technologies }}</h6>
+                       <ul class="actions">
+                           <li><a href="{{project.repo_url}}" class="button">View Source</a></li>
 
-                            {% comment %}
-                             Control flow to determine whether or not the project_url will be visible in
-                             an iframe element.
-                             if: An https url insert raw address into src
-                             else: insert relative address to source for project_detail page
-                            {% endcomment %}
-                            {% if project.is_https %}
-                                <li><a href="{{project.project_url}}" class="button">View Project</a></li>
-                            {% else %}
-                                <li><a href="http://projects.corvi.co/{{project.pk}}" class="button">View Project</a></li>
-                            {% endif %}
+                           {% comment %}
+                           Control flow to determine whether or not the project_url will be visible in
+                           an iframe element.
+                           if: An https url insert raw address into src
+                           else: insert relative address to source for project_detail page
+                           {% endcomment %}
+                           {% if project.is_https %}
+                           <li><a href="{{project.project_url}}" class="button">View Project</a></li>
+                           {% else %}
+                           <li><a href="http://projects.corvi.co/{{project.pk}}" class="button">View Project</a></li>
+                           {% endif %}
 
-						</ul>
+                       </ul>
+                   </div>
                     {% endfor %}
 					</section>
 
